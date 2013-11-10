@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    {% block scripts %}{% endblock %}
+</head>
+<body>
+	<div id="centrowana">
+		<div class="login">
+				{% if login %}
+					<div class="text">
+      					Witaj: <b>{{ user.name }}</b>    <a href="/users/logout/">wyloguj</a>
+      				</div>
+   				{% else %}
+   					<div class="log">
+      				<form action="/users/login/" method="post">
+						{{ error }} <input type="email" name="email" value="{{ email }}" placeholder="E-mail" required>
+						<input type="password" name="password" value="{{ password }}" placeholder="Password" required>
+						<input type="submit" value="Zaloguj">
+					</form>
+					</div>
+					<div class="reg">
+   						<a href="/users/registration/"><b>Zloz podanie do klanu</b></a>
+   					</div>
+    			{% endif %}
+		</div>
+		<div class="bg-img">
+			<div class="bg-meil">
+				<b>klantapir@gmail.com</b>
+			</div>
+		</div>
+		<!-- Przyciski -->
+    {% if user.is_recruter or user.is_tactic %}
+        <div class="buttons">
+			<a href="/add">
+                <div class="button">
+				    Dodaj post
+			    </div>
+            </a>
+        {% if user.is_recruter %}
+			<a href="/users/new_user">
+                <div class="button" style="margin-left: 200px;">
+				    Zobacz podania
+			    </div>
+            </a>
+        {% endif %}
+        {% if user.is_tactic %}
+            <a href="/teamplay/add">
+			    <div class="button" style="margin-left: 400px;">
+				    Dodaj kompanie
+			    </div>
+             </a>
+        {% endif %}
+			    <div class="button" style="margin-left: 600px;">
+                    &nbsp;
+		        </div>
+			    <div class="button" style="margin-left: 800px;">
+                    &nbsp;
+			    </div>
+		</div>
+    {% endif %}
+		<div class="buttons">
+			<a href="/">
+                <div class="button">
+				    Strona Glowna
+			    </div>
+            </a>
+			<a href="/rank">
+                <div class="button" style="margin-left: 200px;">
+				    Ranking
+			    </div>
+            </a>
+            <a href="/mumble">
+			    <div class="button" style="margin-left: 400px;">
+				    Mumble Online
+			    </div>
+             </a>
+            <a href="/rules">
+			    <div class="button" style="margin-left: 600px;">
+				    Regulamin
+		        </div>
+            </a>
+            <a href="/programs">
+			    <div class="button" style="margin-left: 800px;">
+				    Programy i mody
+			    </div>
+            </a>
+		</div>
+	    {% block main %}{% endblock %}
+		<!-- Stopka  -->
+		<div class="footer">
+		</div>
+	</div>
+</body>
+</html>

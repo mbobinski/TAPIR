@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Zapisy na kompanie {% endblock %}
+
+
+{% block content %}
+	{% for entry in team %}
+        <div class="kompania">
+            {% if entry.title == "7 vs 7" %}
+                <img src="{% static 'images/kompanie/9.png' %}">
+            {% elif entry.title == "Kompania VIII tieru" %}
+			    <img src="{% static 'images/kompanie/8.png' %}">
+            {% elif entry.title == "Kompania VI tieru" %}
+				<img src="{% static 'images/kompanie/6.png' %}">
+            {% elif entry.title == "Kompania IV tieru" %}
+				<img src="{% static 'images/kompanie/4.png' %}">
+            {% endif %}
+			<h1>{{ entry.title }}</h1>
+			<h2>{{ entry.date|date:"d.m.Y H:i" }} Prowadzacy: {{ entry.leader }}</h2>
+        </div>
+        <div  id="descriptCompanies">
+        {% if login %}
+            {% if entry.leader == user.name %}
+                <a href="/teamplay/edit/{{ entry.id }}">edytuj</a>,
+            {% endif %}
+            {% if date.date <= entry.date.date %}
+                {% if date.date == entry.date.date and date.hour <= entry.date.hour %}
+                    {% if user.name in entry.persons %}
+                        <a href="/teamplay/out/{{ entry.id }}">Wypisz sie</a>,
+                    {% else %}
+                        <a href="/teamplay/{{ entry.id }}">Zapisz sie</a>,
+                    {% endif %}
+                {% elif date.date < entry.date.date %}
+                    {% if user.name in entry.persons %}
+                        <a href="/teamplay/out/{{ entry.id }}">Wypisz sie</a>,
+                    {% else %}
+                        <a href="/teamplay/{{ entry.id }}">Zapisz sie</a>,
+                    {% endif %}
+                {% endif %}
+             {% endif %}
+            <a href="/teamplay/details/{{ entry.id }}">Szczegoly</a>
+        {% endif %}
+                </div>
+        <div class="right">
+		    Wynik: <span style="color: green;">{{ entry.win }}</span>-<span style="color: #A2007B;">{{ entry.draw }}</span>-<span style="color: #CF2929;">{{ entry.defeat }}</span>
+		</div>
+		<div>
+			<img src="{% static 'images/line.png' %}">
+		</div>
+	{% endfor  %}
+{% endblock %}

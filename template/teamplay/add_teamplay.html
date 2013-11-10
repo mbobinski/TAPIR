@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Dodaj Kompanie {% endblock %}
+
+
+{% block content %}
+        <div id="register">
+            {% if edit %}
+                <form action="/teamplay/edit/{{ team.id }}/" method="post">
+            {% else %}
+                <form action="/teamplay/add/" method="post">
+            {% endif %}
+                <p><select name="title">
+                    {% if select == 1 %}
+                        <option selected>7 vs 7</option>
+                    {% else %}
+                        <option>7 vs 7</option>
+                    {% endif %}
+                    {% if select == 2 %}
+                        <option selected>Kompania VIII tieru</option>
+                    {% else %}
+                        <option>Kompania VIII tieru</option>
+                    {% endif %}
+                    {% if select == 3 %}
+                        <option selected>Kompania VI tieru</option>
+                    {% else %}
+                        <option>Kompania VI tieru</option>
+                    {% endif %}
+                    {% if select == 4 %}
+                        <option selected>Kompania IV tieru</option>
+                    {% else %}
+                        <option>Kompania IV tieru</option>
+                    {% endif %}
+                    </select>
+                </p>
+                {% if edit == False %}
+                    <p><input name="date" type="datetime-local" required></p>
+                {% endif %}
+                <p><textarea name="win" cols="14" rows="1" placeholder="Wygrane" required>{{ team.win }}</textarea></p>
+                <p><textarea name="draw" cols="14" rows="1" placeholder="Remisy" required>{{ team.draw }}</textarea></p>
+                <p><textarea name="defeat" cols="14" rows="1" placeholder="Przegrane" required>{{ team.defeat }}</textarea></p>
+             {% if edit %}
+                <input type="submit" value="Edytuj kompanie">
+            {% else %}
+                <input type="submit" value="Dodaj kompanie">
+            {% endif %}
+
+            </form>
+        </div>
+{% endblock %}

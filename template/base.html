@@ -1,0 +1,37 @@
+{% extends "simpliest.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<!-- Tlo glowna, obrazek -->
+		<div class="body-background-img">
+	    	<!-- Tresc strony img -->
+			<div class="body-img">
+				<img src="{% static 'images/1.jpg' %}" >
+			</div>
+			<!-- Tresc newsow img -->
+			<div class="news-img">
+				<a href="/teamplay" ><img src="{% static 'images/sklep.jpg' %}"></a>
+			</div>
+		</div>
+		<!-- Tlo glowna -->
+		<div id="body-background">
+			<!-- Tresc strony glownej -->
+			<div id="body">
+				{% block content %}{% endblock %}
+    		</div>
+	    	<!-- Tresc newsow -->
+			<div id="news">
+				<div>
+					<a href="http://www.youtube.com/channel/UCFM3Oi9wkAwvYu4P61wf99g"><img src="{% static 'images/menu/youtube.png' %}"></a>
+				</div>
+				<div class="replays">
+					<a href="http://wotreplays.com/uploader/Bobsoon/id/267970"><img src="{% static 'images/menu/replays.png' %}"></a>
+				</div>
+				<div class="mumble">
+					<img src="{% static 'images/menu/mumble.png' %}">
+				</div>
+			</div>
+			<!-- Podciagniecie tla -->
+			<div class="clear"></div>
+		</div>
+{% endblock %}

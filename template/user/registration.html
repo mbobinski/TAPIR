@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Rejestracja {% endblock %}
+
+
+{% block content %}
+        <div id="register">
+            <form action="/users/registration/" method="post">
+                <p><input type="email" name="email" value="{{ email }}" placeholder="E-mail" required> {{ email_error }}</p>
+                <p><input type="password" name="password" value="{{ password }}" placeholder="Haslo" required></p>
+                <p><input type="password" name="password2" value="{{ password }}" placeholder="Powtorz haslo" required> {{ password_error }}</p>
+                <p><input type="text" name="name" value="{{ name }}" placeholder="Nick z gry" required></p>
+                <p><textarea name="message" cols="50" rows="15" required>Napisz dlaczego chcesz wstapic do klanu, lub nick osoby, ktora cie rekrutowala</textarea></p>
+                <p><input type="checkbox" name="rules" value="Regulamin" required/>Zaakceptuj regulamin</p>
+                <input type="submit" value="Zloz podanie">
+            </form>
+        </div>
+{% endblock %}

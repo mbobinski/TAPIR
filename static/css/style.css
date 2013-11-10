@@ -1,0 +1,370 @@
+
+body {
+
+	padding: 0;
+	background: #000000 url(../images/bg_img.jpg) no-repeat center top;
+	background-attachment: fixed;
+	text-align: justify;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	color: #616161;
+}
+
+#centrowana {
+	width: 1000px;
+    margin: auto;
+}
+
+#popup {
+	z-index: 3;
+}
+
+.login {
+	background: #000000 no-repeat center top;
+	background-attachment: scroll;
+	height: 35px;
+	width: 1000px;
+	margin: -8px 0px 0px 0px;
+	text-align: right;
+}
+
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+
+.log {
+	padding: 5px 5px 0px 0px;
+	float: right;
+}
+
+.text {
+	color: orange;
+	padding: 8px 5px 0px 0px;
+	float: right;
+}
+
+.reg {
+	float: left;
+	padding: 8px 5px 0px 5px;
+}
+
+.reg a { color: red }
+
+.login span {
+	color: orange;	
+}
+
+.bg-img {
+	background: #000000 url(../images/logo2.jpg) no-repeat center top;
+	height: 138px;
+	width: 1000px;
+	z-index: -1;
+}
+
+.bg-meil {
+	color: rgb(239,228,176);
+	font-size: 20px;
+	padding: 110px 0px 0px 760px;
+}
+
+.buttons {
+	background: #000000 no-repeat center top;
+	height: 25px;
+	width: 1000px;
+}
+
+.button {
+	background: url(../images/buttons/button.png);
+    font-size: 20px;
+    color: white;
+    width: 199px;
+    text-align: center;
+    position: absolute;
+}
+
+.button:hover {
+    background: url(../images/buttons/buttonClicked.png);
+}
+
+.txtFields {
+	height: 80px;
+	width: 377px;
+	padding: 30px 0px 0px 50px;
+}
+
+.registerFields {
+	height: 500px;
+	width: 550px;
+	padding: 70px 0px 0px 50px;
+}
+#btn {
+	float: right;
+}
+
+#menu {
+	float: right;
+	position: absolute;
+	margin: 0px 0px 0px 435px;
+}
+
+.menuTxt {
+	float: right;
+}
+
+#btnReg {
+	margin: 10px 20px 0px 0px;
+}
+
+.body-background-img {
+	background: url(../images/bg.jpg) no-repeat;
+	height: 281px;
+	width: 1000px;
+	z-index: -1;
+}
+
+#body-background {
+	background: url(../images/bg_repeater.png);
+	padding-top: 40px;
+	margin: -20px 0px 0px 0px;
+}
+
+.body-img {
+	height: 200px;
+	width: 711px;
+	padding: 20px 0px 0px 20px;
+	position: absolute;
+	z-index: 0;
+}
+
+.body-img-rank {
+	height: 200px;
+	width: 10000px;
+	padding: 20px 0px 0px 150px;
+	position: absolute;
+	z-index: 0;
+}
+
+
+#body {
+	float: left;
+	width: 680px;
+	margin: 20px 0px 20px 30px;
+}
+
+
+#body-rank {
+	float:left;
+	width: 1000px;
+	margin: 20px 0px 20px 0px;
+	padding: 0px 0px 0px 0px;
+	text-indent: 30px;
+	z-index: -1;
+}
+
+#body p {
+	margin: -20px 0px 0px -20px;
+}
+
+#register {
+    text-align: center;
+}
+
+
+#register p {
+    margin: 0px 0px 10px 0px;
+}
+
+#body h1{
+	color: white;
+	text-align: left;
+}
+
+.news-img {
+	height: 200px;
+	width: 289px;
+	margin: 0px 0px 0px 711px;
+	padding: 20px 0px 0px 25px;
+	position: absolute;
+	z-index: 0;
+}
+
+#news {
+	float:right;
+	width:287px;
+	height: 500px;
+	padding: 0px 0px 20px 0px;
+}
+
+
+#news img {
+	position: absolute;
+	padding: 20px 0px 0px 25px;
+}
+
+.mumble {
+	padding: 180px 0px 0px 0px;
+}
+
+.replays {
+	padding: 70px 0px 0px 0px;
+}
+
+.kompania {
+	height: 95px;
+	width: 700px;
+	margin: 20px 0px 0px -10px;
+}
+
+.kompania img {
+	position: absolute;
+	margin: 20px 0px 0px -5px;
+}
+
+.kompania h1 {
+	padding: 20px 0px 0px 0px;
+	margin: 0px 0px 0px 110px;
+}
+
+.kompania h2 {
+	color: white;
+	padding: 0px 0px 0px 110px;
+}
+
+.kompania span {
+	color: white;
+	margin: 0px 0px 0px 30px;
+	padding: 0px 0px 0px 110px;
+}
+
+.mody {
+	height: 115px;
+	width: 600px;
+	margin: 20px 0px 0px -10px;
+}
+
+.mody img {
+	position: absolute;
+	margin: 20px 0px 0px -5px;
+}
+
+.mody h1 {
+	padding: 20px 0px 0px 0px;
+	margin: 0px 0px 0px 110px;
+}
+
+.mody h2 {
+	color: white;
+	padding: 0px 0px 0px 110px;
+}
+
+.mody span {
+	color: white;
+	margin: 0px 0px 0px 30px;
+	padding: 0px 0px 0px 110px;
+}
+
+#editCompanies {
+	width: 120;
+	float: left;
+}
+
+#editCompanies img {
+	padding: 0px 10px 0px 0px
+}
+
+#descriptCompanies {
+	width: 200;
+	float: left;
+	text-align: left;
+    margin-left: 100px;
+	color: white;
+}
+
+.tab {
+	padding: 0px 0px 0px 100px;
+}
+
+.right {
+	width: 200;
+	font-size: 16px;
+	float: right;
+}
+
+.clear{
+    clear:both;
+    line-height:0px;
+	z-index: -1;
+}
+
+.points {
+	margin: 20px 0px 20px 0px;
+}
+
+.footer {
+	background: #000000 no-repeat center top;
+	height: 25px;
+	width: 1000px;
+	z-index: -1;
+}
+
+.rules {
+	margin: 20px 0px 20px 0px;
+}
+
+.rules p {
+	padding: 20px 0px 0px 0px;
+}
+
+.linia {
+	padding: 20px 0px 0px 0px;
+}
+
+
+p {
+	text-indent: 20px;
+	margin: 20px 20px 0px 20px;
+}
+
+h3 {
+	padding: 20px 0px 0px 20px;
+}
+
+div.tabHeaders
+{
+	display:block;
+	width: 200%;
+	height:30px;
+	padding: 20px 0px 0px 20px;
+}
+
+div.tabInactive
+{
+	float: left;
+	background-color: #f0f0f0;
+	width: 120px;
+	height: 23px;	
+	padding-top:6px;
+	cursor: pointer;
+	text-align: center;
+}
+
+div.tabActive 
+{
+	float: left;
+	background-color: #ffffff;
+	width: 120px;
+	height: 23px;
+	padding-top:6px;
+	text-align: center;
+}
+
+
+div.tabPages {
+	background: url(images/bg_repeater.png);
+	clear:left;
+	padding:8px;
+	line-height:21px;
+}

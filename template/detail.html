@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Szczegoly {% endblock %}
+
+
+{% block content %}
+        <div class="kompania">
+            {% if team.title == "7 vs 7" %}
+                <img src="{% static 'images/kompanie/9.png' %}">
+            {% elif team.title == "Kompania VIII tieru" %}
+			    <img src="{% static 'images/kompanie/8.png' %}">
+            {% elif team.title == "Kompania VI tieru" %}
+				<img src="{% static 'images/kompanie/6.png' %}">
+            {% elif team.title == "Kompania IV tieru" %}
+				<img src="{% static 'images/kompanie/4.png' %}">
+            {% endif %}
+			<h1>{{ team.title }}</h1>
+			<h2>{{ team.date|date:"d.m.Y H:i" }} Prowadzacy: {{ team.leader }}</h2>
+        </div>
+        <div>
+            <table class="tab">
+                <tr>
+                    <td>Osoby zapisane:</td>
+                </tr>
+                {% for word in tab %}
+                <tr>
+                    <td>
+                        {% if name in word %}
+                            <span style="color: yellow;">
+                            {{ word }}
+                            </span>
+                        {% else %}
+                            <span style="color: white;">
+                            {{ word }}
+                            </span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+		<div>
+			<img src="{% static 'images/line.png' %}">
+		</div>
+{% endblock %}

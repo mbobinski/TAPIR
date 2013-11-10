@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Podania do klanu {% endblock %}
+
+
+{% block content %}
+    {% if user.is_recruter %}
+	{% for entry in users %}
+        {% if entry.is_active == False and "-100" not in entry.points %}
+	    <h1>{{ entry.name }}</h1>
+	    <p>{{ entry.date_joined|date:"Y.m.d H:i" }}
+            <a href="/users/new_user_add/{{ entry.user_id }}">Akceptuj podanie</a>
+            <a href="/users/new_user_out/{{ entry.user_id }}">Odrzuc podanie</a>
+        </p></br>
+	    {{ entry.message|safe }}
+	    <div class="linia">
+			<img src="{% static 'images/line.png' %}">
+		</div>
+        {% endif %}
+	{% endfor  %}
+    {% endif %}
+{% endblock %}

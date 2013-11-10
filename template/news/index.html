@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Strona Glowna {% endblock %}
+
+
+{% block content %}
+	{% for entry in news %}
+	    <h1>{{ entry.title }}</h1>
+	    <p>{{ entry.posted_date|date:"Y.m.d H:i" }} Wystawione przez: {{ entry.publicator }}
+        {% if entry.publicator == user.name %}
+            <a href="/edit/{{ entry.id }}">edytuj</a>
+        {% endif %}
+        </p></br>
+	    {{ entry.text|safe }}
+	    <div class="linia">
+			<img src="{% static 'images/line.png' %}">
+		</div>
+	{% endfor  %}
+{% endblock %}

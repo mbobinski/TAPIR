@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Dodaj Post {% endblock %}
+
+
+{% block content %}
+        <div id="register">
+            {% if edit %}
+                <form action="/edit/{{ id }}/" method="post">
+            {% else %}
+                <form action="/add/" method="post">
+            {% endif %}
+                <p><textarea name="title" cols="50" rows="1" placeholder="Tytul posta" required>{{ title }}</textarea></p>
+                <p><textarea name="message" cols="50" rows="15" placeholder="Tres posta" required>{{ message }}</textarea></p>
+             {% if edit %}
+                <input type="submit" value="Edytuj post">
+            {% else %}
+                <input type="submit" value="Dodaj post">
+            {% endif %}
+
+            </form>
+        </div>
+{% endblock %}

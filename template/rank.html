@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Ranking {% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'scripts/sorttable.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+<!-- Tło główna, obrazek -->
+		  <div class="body-background-img">
+			<!-- Treść strony img -->
+			<div class="body-img-rank">
+				<img src="{% static 'images/rank.jpg' %}">
+			</div>
+		  </div>
+		<!-- Tło główna -->
+		  <div id="body-background">
+				<!-- Tresc strony głównej -->
+				<div id="body-rank">
+                <a href="/rank/update/live"><button>Odswiez ranking</button></a>
+                <center>
+	<table class="sortable">
+						<tr>
+							<td>
+								Nick
+							</td>
+							<td>
+								Dmg
+							</td>
+							<td>
+								Bitwy
+							</td>
+							<td>
+								Dmg/Bitwy
+							</td>
+							<td>
+								Zniszczone
+							</td>
+							<td>
+								Wykryte
+							</td>
+							<td>
+								Doswiadczenie
+							</td>
+							<td>
+								Wygrane (%)
+							</td>
+						</tr>
+    {% for word in rank %}
+                        <tr>
+							<td>
+								{{ word.name }}
+							</td>
+							<td>
+								{{ word.dmg }}
+							</td>
+							<td>
+								{{ word.participated }}
+							</td>
+							<td>
+                                {{ word.defeat }}
+							</td>
+							<td>
+								{{ word.destroyed }}
+							</td>
+							<td>
+								{{ word.spoted }}
+							</td>
+							<td>
+								{{ word.exp }}
+							</td>
+							<td>
+								{{ word.win }}
+							</td>
+						</tr>
+    {% endfor %}
+    </table>
+                </center>
+ 				</div>
+				<!-- Podciągnięcie tła -->
+				<div class="clear"></div>
+		  </div>
+{% endblock %}
